@@ -1,0 +1,8 @@
+#Vscode Files
+.vscode
+
+#Virtual Env Files
+env
+
+#Files Downloaded For Testing
+*.mp4
