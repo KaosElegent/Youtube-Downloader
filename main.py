@@ -40,7 +40,7 @@ while True:
     dirPath = filedialog.askdirectory(initialdir=".")
     os.chdir(dirPath)
 
-    usrChoice = input("1) Single MP3\n2) Playlist of MP3sn0) Exit\n(1/2/0)> ")
+    usrChoice = input("1) Single MP3\n2) Playlist of MP3s\n0) Exit\n(1/2/0)> ")
     if usrChoice == '1':
         link = input("Enter the YouTube video URL: ")
         Download(link)
