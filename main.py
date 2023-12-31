@@ -49,6 +49,7 @@ while True:
             link = input("Enter the YouTube video URL: ")
             Download(link)
         else:
+            link = input("Enter the YouTube Playlist URL: ")
             DownloadPlaylist(link)
     else:
         break
