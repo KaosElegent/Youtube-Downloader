@@ -7,6 +7,7 @@ import os
 def Download(link):
     try:
         video = YouTube(link)
+        print(f'Downloading Video: {video.title}')
     except:
         print("Invalid URL. Try Again.")
         return -1
@@ -21,10 +22,10 @@ def Download(link):
 def DownloadPlaylist(link):
     try:
         p = Playlist(link)
+        print(f'Downloading Playlist: {p.title}')
     except:
         print("Invalid Playlist Link\n")
     
-    print(f'Downloading Playlist: {p.title}')
     try:
         for video in p.videos:
             print(f'Downloading: {video.title}')
@@ -35,18 +36,20 @@ def DownloadPlaylist(link):
 
 print("Welcome to the Downloader")
 while True:
-    print("Please select the directory where you wish to download to...")
-    sleep(2)
-    dirPath = filedialog.askdirectory(initialdir=".")
-    os.chdir(dirPath)
+    
 
     usrChoice = input("1) Single MP3\n2) Playlist of MP3s\n0) Exit\n(1/2/0)> ")
-    if usrChoice == '1':
-        link = input("Enter the YouTube video URL: ")
-        Download(link)
-    elif usrChoice == '2':
-        link = input("Enter the Playlist URL: ")
-        DownloadPlaylist(link)
+    if usrChoice in ['1','2']:
+        print("Please select the directory where you wish to download to...")
+        sleep(1)
+        dirPath = filedialog.askdirectory(initialdir=".")
+        os.chdir(dirPath)
+
+        if usrChoice == '1':
+            link = input("Enter the YouTube video URL: ")
+            Download(link)
+        else:
+            DownloadPlaylist(link)
     else:
         break
 print("Thank you for using the downloader!")
