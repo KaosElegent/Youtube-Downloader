@@ -6,3 +6,6 @@ env
 
 #Files Downloaded For Testing
 *.mp4
+
+#Test Downloads
+test
